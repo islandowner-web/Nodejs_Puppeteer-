@@ -1,6 +1,6 @@
-let puppeteer = require('puppeteer')
+let puppeteer = require('puppeteer');
 
-async function test() {
+(async () => {
   //puppeteer.launch实例开启浏览器，
   //可以传入一个options对象，可以配置为无界面浏览器，也可以配置为有界面浏览器
   //无界面浏览器性能更高更快，有界面一般用于调试开式
@@ -17,9 +17,7 @@ async function test() {
 
   // 打开新页面
   let page = await browser.newPage()
-  await page.goto('https://www.dy2018.com/?jdfwkey=1vljy2')
+  await page.goto('https://www.baidu.com/')
   // 截图
   await page.screenshot({path: 'screenshot.png'})
-}
-
-test()
+})();

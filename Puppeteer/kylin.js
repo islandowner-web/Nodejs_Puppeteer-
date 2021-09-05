@@ -7,7 +7,7 @@ let kdtUrl = 'https://testqlinyun.back.qlinyun.com/shopMaster';
   let debugOptions = {
     //设置视窗的宽高
     defaultViewport:{
-        width:1400,
+        width:1600,
         height:900
     },
     //设置为有界面，如果为true，即为无界面
@@ -28,8 +28,8 @@ let kdtUrl = 'https://testqlinyun.back.qlinyun.com/shopMaster';
       page.click('.no-login span:first-child'), // 点击该链接将间接导致导航(跳转)
     ]);
 
-    inputUsername = await page.$("#username")
-    inputPassword = await page.$("#password")
+    let inputUsername = await page.$("#username")
+    let inputPassword = await page.$("#password")
     
     await inputUsername.focus()
     await page.keyboard.type('13045970746')
@@ -44,24 +44,21 @@ let kdtUrl = 'https://testqlinyun.back.qlinyun.com/shopMaster';
 
     await page.goto(kdtUrl)
     
-    companyName = await page.$("form .companyName input")
-    await companyName.focus()
+  
+    await page.focus("form .companyName input")
     await page.keyboard.type('自动输入企业名称')
-    
-    connectname = await page.$("form .name input")
-    await connectname.focus()
+
+    await page.focus("form .name input")
     await page.keyboard.type('自动输入联系人')
 
-    mainProduct = await page.$("form .mainProduct input")
-    await mainProduct.focus()
+    await page.focus("form .mainProduct input")
     await page.keyboard.type('自动输入主营产品')
 
-    intentionPlat = await page.$("form .intentionPlat input")
-    await intentionPlat.focus()
+    await page.focus("form .intentionPlat input")
     await page.keyboard.type('自动输入意向平台')
 
-    detailAddress = await page.$("form .detailAddress input")
-    await detailAddress.focus()
+
+    await page.focus("form .detailAddress input")
     await page.keyboard.type('自动输入详细地址')
 
     let element  = await page.$("form .area input")
@@ -70,9 +67,9 @@ let kdtUrl = 'https://testqlinyun.back.qlinyun.com/shopMaster';
     const x = box.x + (box.width/2);
     const y = box.y + (box.height/2);
     await page.mouse.click(x,y)
-    await page.mouse.click((x-50),(y+140))
+    await page.mouse.click((x-50),(y+110))
     await page.mouse.click(x,(y+100))
-    await page.mouse.click((x+150),(y+90))
+    await page.mouse.click((x+170),(y+90))
 
   }
 
