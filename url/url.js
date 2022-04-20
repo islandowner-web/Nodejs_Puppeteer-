@@ -14,3 +14,4 @@ reurl = './foreignBusiness'
 let newUrl = url.resolve(targetUrl, reurl)
 // let newUrl = new URL(targetUrl, reurl)
 console.log(newUrl)
+
